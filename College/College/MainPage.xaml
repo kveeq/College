@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="College.MainPage">
+
+    <!-- добавлен индикатор загрузки (040821) -->
+
+    <Grid BackgroundColor="#e9e9e9">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.3*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+
+        <ProgressBar 
+            x:Name="prgbar"
+            IsVisible="false"
+            Progress="25"
+            Visual="Material"/>
+
+        <!--040821
+        </ProgressBar>
+        <ProgressBar 
+            Style="{StaticResource MaterialDesignCircularProgressBar}"
+          Progress="0"
+          IsVisible="false"
+          VerticalOptions="Center"
+          HorizontalOptions="Center">
+        </ProgressBar>
+        040821-->
+
+        <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Background="#e9e9e9" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="50" />
+            </Grid.ColumnDefinitions>
+            <ImageButton x:Name="Ktits" Source="logo.png" BackgroundColor="Transparent" VerticalOptions="FillAndExpand" CornerRadius="50" Grid.Column="0" HorizontalOptions="FillAndExpand" Margin="10,10,10,10" Aspect="AspectFill">
+
+            </ImageButton>
+            <Grid Grid.Column="1" HorizontalOptions="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="50" />
+                </Grid.ColumnDefinitions>
+                <Entry x:Name="name" Placeholder="ФИО" Visual="Material" FontAttributes="Bold" Grid.Column="0" FontSize="24" VerticalTextAlignment="Center" FontFamily="Comic Sans MS" WidthRequest="500" HeightRequest="50" Background="#66EED8D8"/>
+                <ImageButton x:Name="find" BackgroundColor="Transparent" Source="search_magnifyng_glass_find_locate_icon_123485.png" WidthRequest="50" HeightRequest="50" Grid.Column="1" Clicked="find_Clicked">
+                </ImageButton>
+            </Grid>
+            <ImageButton Source="logo.png" Grid.Column="2" WidthRequest="50" HeightRequest="50" Clicked="Button_Clicked"></ImageButton>
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="0" Margin="15, 0, 0, 0">
+            <ImageButton x:Name="img" Source="logo.png" Aspect="Fill" CornerRadius="10">
+
+            </ImageButton>
+        </Grid>
+
+
+        <Grid Grid.Row="1" Grid.Column="1" Background="#fff" Margin="0, 0, 15, 0">
+
+            <Grid.ColumnDefinitions>
+
+                <ColumnDefinition Width="0.35*" />
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.45*" />
+                <RowDefinition Height="0.5*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <BoxView x:Name="brd" BackgroundColor="Transparent" VerticalOptions="End" HeightRequest="2" Grid.ColumnSpan="2" Grid.Row="0" Background="Transparent" />
+            <Label x:Name="lbl_Year" Text="Год выпуска" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" VerticalOptions="FillAndExpand" FontFamily="Comic Sans MS" FontSize="20" Grid.Column="0" Grid.Row="1" TextColor="#999" FontAttributes="Bold" Margin="15,10,0,0" />
+
+
+            <Label x:Name="lbl_Activities" Text="Достижения" Grid.Row="2" Grid.Column="0" Background="transparent" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" FontFamily="" FontSize="20" TextColor="#999" FontAttributes="Bold" Margin="15,10,0,0"/>
+            <Label x:Name="lbl_activitiess" Grid.Row="2" Grid.Column="1" Text="Достижения" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" FontSize="20" FontFamily="Comic Sans MS" TextColor="#FFE71313" FontAttributes="Bold" Grid.RowSpan="2" Margin="15,10,0,0"/>
+            <Label x:Name="txt_birthday" Grid.Row="1" Grid.Column="1" Text="Год выпуска" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" FontFamily="Comic Sans MS" FontSize="20" TextColor="#FFD72323" FontAttributes="Bold" Margin="15,10,0,0"/>
+            <Label x:Name="JoinedName" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" Text="ФИО" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" FontFamily="Comic Sans MS" FontSize="25" TextColor="#FFE21010" FontAttributes="Bold" Margin="15,0,0,0"/>
+
+        </Grid>
+
+        <Grid Grid.Row="2" Grid.ColumnSpan="2" Background="#e9e9e9">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="200" />
+            </Grid.ColumnDefinitions>
+            <Button x:Name="Prev" Text="Предыдущий" FontAttributes="Bold" TextColor="#9e9e9e" FontFamily="Comic Sans MS" FontSize="23"
+
+VerticalOptions="FillAndExpand" CornerRadius="0" Grid.Column="0" HorizontalOptions="FillAndExpand" Clicked="Prev_Clicked">
+
+            </Button>
+            <Button x:Name="Next" Text="Следующий" TextColor="#9e9e9e" FontAttributes="Bold" FontFamily="Comic Sans MS" FontSize="23" VerticalOptions="FillAndExpand" CornerRadius="0" Grid.Column="2" HorizontalOptions="FillAndExpand" Clicked="Next_Clicked" >
+
+            </Button>
+        </Grid>
+    </Grid>
+
+</ContentPage>

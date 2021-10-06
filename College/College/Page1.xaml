@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="College.Page1">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.3*"/>
+            <ColumnDefinition Width="0.3*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="0.7*"/>
+        </Grid.ColumnDefinitions>
+
+        <Entry Grid.Column="0" x:Name="FIO" Placeholder="ФИО" Grid.ColumnSpan="2" Grid.Row="0"></Entry>
+        <Entry Grid.Column="0" x:Name="Date" Placeholder="Дата выпуска" Grid.ColumnSpan="2" Grid.Row="1"></Entry>
+        <Entry Grid.Column="0" x:Name="Activity" Placeholder="Достижения" Grid.ColumnSpan="2" Grid.Row="2"></Entry>
+        <Button Text="Добавить" Grid.Column="0" Grid.Row="3" Clicked="Button_Clicked"></Button>
+        <Button Text="Открыть путь" Grid.Column="1" Grid.Row="3" Clicked="Button_Clicked_1"></Button>
+        <ListView x:Name="lst_view" Grid.Column="2" Grid.Row="0" Grid.RowSpan="6" BackgroundColor="Black">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout BackgroundColor="#eee" Orientation="Vertical" FlowDirection="MatchParent">
+                            <StackLayout Orientation="Horizontal" >
+                                <Label x:Name="text" Text="{Binding Name}"
+                                    HorizontalOptions="Start"
+                                    Margin="5,10,7,0"
+                                    TextColor="DarkGray" />
+                                <Label x:Name="text1" Text="{Binding SurName}"
+                                    HorizontalOptions="Start"
+                                    Margin="0,10,7,0"
+                                    TextColor="DarkGray" />
+                                <Label x:Name="text2" Text="{Binding Patronymic}"
+                                    HorizontalOptions="Start"
+                                    Margin="0,10,7,0"
+                                    TextColor="DarkGray" />
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <ImageButton x:Name="resultImage" Source="Resources/drawable/logo.png" Aspect="AspectFill" Grid.Column="3" Grid.Row="0" Grid.RowSpan="5"></ImageButton>
+    </Grid>
+</ContentPage>
